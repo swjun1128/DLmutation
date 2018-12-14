@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import keras
 from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D
