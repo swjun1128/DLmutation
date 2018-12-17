@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 import keras
 from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Dense, Flatten
 from keras.models import Sequential
 from sklearn.model_selection import train_test_split
+
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -34,4 +36,4 @@ model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1)  #shuffle=True
 score = model.evaluate(x_test, y_test)
 print('Test Loss: %.4f' % score[0])
 print('Test accuracy: %.4f'% score[1])
-model.save('LeNet_raw.hdf5')
+model.save('ModelA_raw.hdf5')
