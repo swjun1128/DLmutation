@@ -5,6 +5,7 @@ Created on Fri Dec 14 16:42:34 2018
 
 @author: qq
 """
+import keras
 from keras.models import load_model
 from keras.models import model_from_json
 import h5py  #导入工具包  
@@ -37,22 +38,9 @@ x_test = x_test / 255
 
 y_train = keras.utils.to_categorical(y_train, 10)
 y_test = keras.utils.to_categorical(y_test, 10)
-
-f = h5py.File('ModelA_raw.hdf5','r')
-print f['/model_weights/dense_1']['dense_1'].keys()
-print f['/model_weights/conv2d_2']['conv2d_2'].keys()
-
-print f['/model_weights/conv2d_2']['conv2d_2']['kernel:0'].shape
-
-for item in f.attrs.items():
-    print len(f.attrs.items())
-    print item[0]
-    print item[1]
-#print f['/model_weights/conv2d_2']['conv2d_2']['kernel:0'][2][2]
-
    
-print 'swj'
-model_path='ModelA_raw.hdf5'
+
+model_path='../ModelA_raw.hdf5'
 model=load_model(model_path)
 json_string=model.to_json()
 #relu换成linear即可   
@@ -63,6 +51,7 @@ score = model.evaluate(x_test, y_test)
 print('Origin Test accuracy: %.4f'% score[1])
 
 for i in range(json_string.count('relu')):
+    #轮流换relu，换成linear其实就是删除的效果，线性等于无激活函数
     json_string_temp = json_string.replace('relu', 'linear', i+1)
     json_string_new = json_string_temp.replace('linear','relu',i)
     print json_string_new.count('relu')
@@ -75,20 +64,23 @@ for i in range(json_string.count('relu')):
     print('Mutated Test accuracy: %.4f'% score[1])
 
 '''
-10000/10000 [==============================] - 3s 295us/step
-Mutated Test accuracy: 0.9712
+Origin Test accuracy: 0.9738
 3
-1188
-10000/10000 [==============================] - 3s 295us/step
-Mutated Test accuracy: 0.9651
+389
+10000/10000 [==============================] - 2s 238us/step
+Mutated Test accuracy: 0.9730
 3
-2036
-10000/10000 [==============================] - 3s 291us/step
-Mutated Test accuracy: 0.8997
+1199
+10000/10000 [==============================] - 2s 246us/step
+Mutated Test accuracy: 0.9366
 3
-2503
-10000/10000 [==============================] - 3s 293us/step
-Mutated Test accuracy: 0.9243
+2079
+10000/10000 [==============================] - 2s 243us/step
+Mutated Test accuracy: 0.8951
+3
+2546
+10000/10000 [==============================] - 2s 243us/step
+Mutated Test accuracy: 0.9420
 '''
 #model.save_weights('my_model_weight.h5')
 #data=h5py.File('my_model_weight.h5','r+')
