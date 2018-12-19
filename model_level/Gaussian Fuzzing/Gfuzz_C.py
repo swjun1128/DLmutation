@@ -6,10 +6,10 @@ import h5py
 import os
 import numpy as np
 import pandas as pd
-from sklearn.metrics import accuracy_score
 from keras.datasets import cifar10
 import csv
 from keras.datasets import mnist
+from keras.utils import np_utils
 
 def HDF5_structure(data):
     root=data.keys()
@@ -99,10 +99,9 @@ def accuracy_cifar(model):
     (_, _), (X_test, Y_test) = cifar10.load_data()
     X_test=X_test.astype('float32')
     X_test/=255
-    pred=model.predict(X_test)
-    pred=list(map(lambda x:np.argmax(x),pred))
-    test_label=list(map(lambda x:np.argmax(x),pd.get_dummies(Y_test.reshape(-1)).values))
-    return accuracy_score(test_label,pred)
+    Y_test = np_utils.to_categorical(Y_test, 10)
+    score = model.evaluate(X_test, Y_test, verbose=0)
+    return score[1]
 
 
 if __name__=='__main__':
@@ -111,7 +110,7 @@ if __name__=='__main__':
     score = accuracy_cifar(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
-    for i in range(20):
+    for i in range(1):
         model_change = gaussian_fuzz(model,random_ratio=0.01)
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
