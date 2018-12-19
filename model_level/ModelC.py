@@ -1,7 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 from keras import Model,Input
-from sklearn.model_selection import train_test_split
 import sys
 import time
 import keras
