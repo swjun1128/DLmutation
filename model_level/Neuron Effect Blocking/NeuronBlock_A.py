@@ -6,7 +6,6 @@ import h5py
 import os
 import numpy as np
 import pandas as pd
-from sklearn.metrics import accuracy_score
 from keras.datasets import cifar10
 import csv
 from keras.datasets import mnist
