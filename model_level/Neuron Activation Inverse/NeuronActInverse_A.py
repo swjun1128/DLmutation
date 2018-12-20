@@ -32,7 +32,7 @@ def HDF5_structure(data):
     return data_path
 
 
-def neuron_effect_block(model,Layer='dense_1',neuron_index=0):
+def neuron_act_inverse(model,Layer='dense_1',neuron_index=0):
     #Layer = dense_1 or dense_2
     #neuron_index第n个神经元
     json_string=model.to_json()
@@ -42,11 +42,14 @@ def neuron_effect_block(model,Layer='dense_1',neuron_index=0):
         data_path=HDF5_structure(data)
         lst=[]
         for path in data_path:
+            print path
             if Layer not in path.split('/')[0]:
                 continue
             if 'bias' in path:
                 #把偏移值置为0
-                data[path][neuron_index]=0
+                print 'before:',data[path][neuron_index]
+                data[path][neuron_index]= -data[path][neuron_index]
+                print data[path][neuron_index]
                 continue
             #print path
             #print data[path].shape
@@ -80,15 +83,15 @@ if __name__=='__main__':
     score = accuracy_mnist(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
-    for i in range(25):
-        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
+    for i in range(1):
+        model_change = neuron_act_inverse(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))
     print 'dense1:',acc
     acc =[]
-    for i in range(25):
-        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
+    for i in range(1):
+        model_change = neuron_act_inverse(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))

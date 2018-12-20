@@ -42,7 +42,7 @@ def neuron_effect_block(model,Layer='dense_1',neuron_index=0):
         data_path=HDF5_structure(data)
         lst=[]
         for path in data_path:
-            if Layer not in path.split('/')[0] or 'bias' in path:
+            if Layer not in path.split('/')[0]:
                 continue
             if 'bias' in path:
                 #把偏移值置为0
