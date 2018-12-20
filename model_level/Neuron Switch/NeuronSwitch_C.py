@@ -59,37 +59,33 @@ def neuron_switch(model,Layer='dense_1',neuron_change=[0,1]):
     model_change.load_weights('my_model_weight.h5')
     return model_change
 
-def accuracy_mnist(model):
-    '''
-    model: DNN_model
-    return : acc of mnist
-    '''
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    # 输入数据为 mnist 数据集
-    x_test = x_test.astype('float32').reshape(-1,28,28,1)
-    x_test = x_test / 255
-
-    y_test = keras.utils.to_categorical(y_test, 10)
-    score = model.evaluate(x_test, y_test)
+def accuracy_cifar(model):
+    #model: CNN_model
+    #return : acc of cifar
+    (_, _), (X_test, Y_test) = cifar10.load_data()
+    X_test=X_test.astype('float32')
+    X_test/=255
+    Y_test = keras.utils.to_categorical(Y_test, 10)
+    score = model.evaluate(X_test, Y_test, verbose=0)
     return score[1]
 
 
 if __name__=='__main__':
-    model_path='../ModelA_raw.hdf5'
+    model_path='../ModelC_raw.hdf5'
     model=load_model(model_path)
-    score = accuracy_mnist(model)
+    score = accuracy_cifar(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
     for i in range(25):
-        model_change = neuron_switch(model,Layer = 'dense_1',neuron_change=np.random.choice(120,2))
+        model_change = neuron_switch(model,Layer = 'dense_1',neuron_change=np.random.choice(256,2))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change))
+        acc.append(accuracy_cifar(model_change))
     print 'dense1:',acc
     acc =[]
     for i in range(25):
-        model_change = neuron_switch(model,Layer = 'dense_2',neuron_change=np.random.choice(84,2))
+        model_change = neuron_switch(model,Layer = 'dense_2',neuron_change=np.random.choice(256,2))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change))
+        acc.append(accuracy_cifar(model_change))
     print 'dense2:',acc

@@ -75,21 +75,14 @@ def accuracy_mnist(model):
 
 
 if __name__=='__main__':
-    model_path='../ModelA_raw.hdf5'
+    model_path='../ModelB_raw.hdf5'
     model=load_model(model_path)
     score = accuracy_mnist(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
-    for i in range(25):
-        model_change = neuron_switch(model,Layer = 'dense_1',neuron_change=np.random.choice(120,2))
+    for i in range(50):
+        model_change = neuron_switch(model,Layer = 'dense_1',neuron_change=np.random.choice(200,2))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))
     print 'dense1:',acc
-    acc =[]
-    for i in range(25):
-        model_change = neuron_switch(model,Layer = 'dense_2',neuron_change=np.random.choice(84,2))
-        model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-        #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change))
-    print 'dense2:',acc
