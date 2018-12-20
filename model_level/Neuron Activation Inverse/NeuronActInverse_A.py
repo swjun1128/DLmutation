@@ -54,7 +54,7 @@ def neuron_act_inverse(model,Layer='dense_1',neuron_index=0):
             #更新data里的数据，把neuron_index神经元的权重都置为0
             for i in range(data[path].shape[0]):
                 temp_lst=data[path][i].copy()
-                temp_lst[neuron_index]=0
+                temp_lst[neuron_index]= -temp_lst[neuron_index]
                 data[path][i] = temp_lst
     model_change = model_from_json(json_string)
     model_change.load_weights('my_model_weight.h5')
@@ -81,7 +81,7 @@ if __name__=='__main__':
     score = accuracy_mnist(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
-    for i in range(1):
+    for i in range(25):
         model_change = neuron_act_inverse(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)

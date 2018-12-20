@@ -32,7 +32,7 @@ def HDF5_structure(data):
     return data_path
 
 
-def neuron_effect_block(model,Layer='dense_1',neuron_index=0):
+def neuron_act_inverse(model,Layer='dense_1',neuron_index=0):
     #Layer = dense_1 or dense_2
     #neuron_index第n个神经元
     json_string=model.to_json()
@@ -45,15 +45,15 @@ def neuron_effect_block(model,Layer='dense_1',neuron_index=0):
             if Layer not in path.split('/')[0]:
                 continue
             if 'bias' in path:
-                #把偏移值置为0
-                data[path][neuron_index]=0
+                #把偏移值置为相反数
+                data[path][neuron_index]=-data[path][neuron_index]
                 continue
             #print path
             #print data[path].shape
-            #更新data里的数据，把neuron_index神经元的权重都置为0
+            #更新data里的数据，把neuron_index神经元的权重都置为相反数
             for i in range(data[path].shape[0]):
                 temp_lst=data[path][i].copy()
-                temp_lst[neuron_index]=0
+                temp_lst[neuron_index]=-temp_lst[neuron_index]
                 data[path][i] = temp_lst
     model_change = model_from_json(json_string)
     model_change.load_weights('my_model_weight.h5')
@@ -81,7 +81,7 @@ if __name__=='__main__':
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
     for i in range(50):
-        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(200))
+        model_change = neuron_act_inverse(model,Layer = 'dense_1',neuron_index=np.random.choice(200))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))
