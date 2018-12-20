@@ -33,7 +33,7 @@ def HDF5_structure(data):
 
 
 def neuron_switch(model,Layer='dense_1',neuron_change=[0,1]):
-    print neuron_change
+    #print neuron_change
     #Layer = dense_1 or dense_2
     #neuron_index第n个神经元
     json_string=model.to_json()

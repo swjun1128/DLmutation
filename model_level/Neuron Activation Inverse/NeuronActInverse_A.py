@@ -42,7 +42,6 @@ def neuron_act_inverse(model,Layer='dense_1',neuron_index=0):
         data_path=HDF5_structure(data)
         lst=[]
         for path in data_path:
-            print path
             if Layer not in path.split('/')[0]:
                 continue
             if 'bias' in path:
