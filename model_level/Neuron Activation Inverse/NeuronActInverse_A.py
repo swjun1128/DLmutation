@@ -47,9 +47,7 @@ def neuron_act_inverse(model,Layer='dense_1',neuron_index=0):
                 continue
             if 'bias' in path:
                 #把偏移值置为0
-                print 'before:',data[path][neuron_index]
                 data[path][neuron_index]= -data[path][neuron_index]
-                print data[path][neuron_index]
                 continue
             #print path
             #print data[path].shape
