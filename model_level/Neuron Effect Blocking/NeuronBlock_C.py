@@ -65,7 +65,7 @@ def accuracy_cifar(model):
     (_, _), (X_test, Y_test) = cifar10.load_data()
     X_test=X_test.astype('float32')
     X_test/=255
-    Y_test = np_utils.to_categorical(Y_test, 10)
+    Y_test = keras.utils.to_categorical(Y_test, 10)
     score = model.evaluate(X_test, Y_test, verbose=0)
     return score[1]
 
