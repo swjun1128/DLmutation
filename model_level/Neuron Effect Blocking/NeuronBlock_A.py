@@ -81,14 +81,14 @@ if __name__=='__main__':
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
     for i in range(25):
-        model_change = weight_shuffling(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
+        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))
     print 'dense1:',acc
     acc =[]
     for i in range(25):
-        model_change = weight_shuffling(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
+        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_mnist(model_change))

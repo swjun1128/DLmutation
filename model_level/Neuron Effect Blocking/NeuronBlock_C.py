@@ -73,18 +73,18 @@ def accuracy_cifar(model):
 if __name__=='__main__':
     model_path='../ModelC_raw.hdf5'
     model=load_model(model_path)
-    score = accuracy_mnist(model)
+    score = accuracy_cifar(model)
     print('Origin Test accuracy: %.4f'% score)
     acc =[]
     for i in range(25):
-        model_change = weight_shuffling(model,Layer = 'dense_1',neuron_index=np.random.choice(256))
+        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(256))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_cifar(model_change))
     print 'dense1:',acc
     acc =[]
     for i in range(25):
-        model_change = weight_shuffling(model,Layer = 'dense_2',neuron_index=np.random.choice(256))
+        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index=np.random.choice(256))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc.append(accuracy_cifar(model_change))
