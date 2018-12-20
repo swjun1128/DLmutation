@@ -69,6 +69,14 @@ def gaussian_fuzz(model,random_ratio=0.01):
                  #加上以权重值自身为均值和标准差的正态分布噪声
                 arr+= np.random.normal(weight,abs(weight))
                 data[path[0]][int(path[1])]=arr
+                '''
+                #有点问题，部分权重没有更新成功，下面的代码是正确的。
+                arr=data[path[0]].copy()
+                weight = arr[int(path[1])]
+                 #加上以权重值自身为均值和标准差的正态分布噪声
+                arr[int(path[1])]+= np.random.normal(weight,abs(weight))
+                data[path[0]]=arr
+                '''
             elif len(path)==5:
                 arr=data[path[0]][int(path[1])][int(path[2])][int(path[3])].copy()
                 weight = arr[int(path[4])]
