@@ -69,6 +69,8 @@ def get_bound_data_mnist(model,bound_ratio=10):
                 bound_data_lst.append(i)   
     return bound_data_lst
 
+
+#变异模型在边界值集合上的准确率
 def accuracy_in_bound_data_mnist(mutated_model,bound_data_lst):
     test_part=x_test[bound_data_lst]#部分的测试用例
     label_part = y_test[bound_data_lst]
