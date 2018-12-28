@@ -12,7 +12,6 @@ from keras.models import model_from_json
 import h5py  #导入工具包  
 import numpy as np  
 from tensorflow.examples.tutorials.mnist import input_data
-from sklearn.metrics import accuracy_score
 from keras.datasets import mnist
 from keras.models import Model,Input,load_model
 
