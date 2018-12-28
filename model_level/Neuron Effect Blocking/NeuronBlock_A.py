@@ -86,18 +86,18 @@ if __name__=='__main__':
     print('Origin Test accuracy: %.4f'% score)
     bound_data_lst = get_bound_data_mnist(model,10)
     acclst =[]
-    neuron_index = p.random.choice(120,25)
+    index = p.random.choice(120,25)
     for i in range(25):
-        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index[i])
+        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index= index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
         acclst.append(acc)
     print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
     acclst =[]
-    neuron_index = p.random.choice(84,25)
+    index = p.random.choice(84,25)
     for i in range(25):
-        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index[i])
+        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index= index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
