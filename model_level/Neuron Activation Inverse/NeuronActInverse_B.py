@@ -87,8 +87,8 @@ if __name__=='__main__':
     
     bound_data_lst = get_bound_data_mnist(model,10)
     acclst =[]
-    index = np.random.choice(120,25)
-    for i in range(25):
+    index = np.random.choice(200,50)
+    for i in range(50):
         model_change = neuron_act_inverse(model,Layer = 'dense_1',neuron_index=index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
