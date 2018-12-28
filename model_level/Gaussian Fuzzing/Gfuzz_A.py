@@ -11,6 +11,11 @@ from keras.datasets import cifar10
 import csv
 from keras.datasets import mnist
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]
@@ -121,4 +126,12 @@ if __name__=='__main__':
     print('Origin Test accuracy: %.4f'% score)
     model_change = gaussian_fuzz(model,random_ratio=0.01)
     model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-    print 'Mutated Test accuracy: ',accuracy_mnist(model_change,mnist)
+    
+    bound_data_lst = get_bound_data_mnist(model,10)
+    acclst=[]
+    for i in range(20):
+        model_change = gaussian_fuzz(model,random_ratio=0.01)
+        model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data: ',[round(i,4) for i in acclst]

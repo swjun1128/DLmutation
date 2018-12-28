@@ -11,6 +11,11 @@ from keras.datasets import cifar10
 import csv
 from keras.datasets import mnist
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]
@@ -32,6 +37,7 @@ def HDF5_structure(data):
     return data_path
 
 
+
 def gaussian_fuzz(model,random_ratio=0.01):
     #期望是权重值，方差是w平方，不区分'kernel' or 'bias'都当做权重值处理
     #选取1%的权重值增加高斯噪声
@@ -42,7 +48,7 @@ def gaussian_fuzz(model,random_ratio=0.01):
         data_path=HDF5_structure(data)
         lst=[]
         for path in data_path:
-            #print data[path].shape
+          
             if len(data[path].shape)==4:
                 a,b,c,d=data[path].shape
                 lst.extend([(path,a_index,b_index,c_index,d_index) for a_index in range(a) for b_index in range(b) for c_index in range(c) for d_index in range(d)])
@@ -68,6 +74,14 @@ def gaussian_fuzz(model,random_ratio=0.01):
                  #加上以权重值自身为均值和标准差的正态分布噪声
                 arr+= np.random.normal(weight,abs(weight))
                 data[path[0]][int(path[1])]=arr
+                '''
+                #有点问题，部分权重没有更新成功，下面的代码是正确的。
+                arr=data[path[0]].copy()
+                weight = arr[int(path[1])]
+                 #加上以权重值自身为均值和标准差的正态分布噪声
+                arr[int(path[1])]+= np.random.normal(weight,abs(weight))
+                data[path[0]]=arr
+                '''
             elif len(path)==5:
                 arr=data[path[0]][int(path[1])][int(path[2])][int(path[3])].copy()
                 weight = arr[int(path[4])]
@@ -108,8 +122,16 @@ def accuracy_cifar(model):
 if __name__=='__main__':
     model_path='../ModelB_raw.hdf5'
     model=load_model(model_path)
-    #score = accuracy_mnist(model,mnist)
-    #print('Origin Test accuracy: %.4f'% score)
+    score = accuracy_mnist(model,mnist)
+    print('Origin Test accuracy: %.4f'% score)
     model_change = gaussian_fuzz(model,random_ratio=0.01)
     model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-    print 'Mutated Test accuracy: ',accuracy_mnist(model_change,mnist)
+    
+    bound_data_lst = get_bound_data_mnist(model,10)
+    acclst=[]
+    for i in range(20):
+        model_change = gaussian_fuzz(model,random_ratio=0.01)
+        model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data: ',[round(i,4) for i in acclst]

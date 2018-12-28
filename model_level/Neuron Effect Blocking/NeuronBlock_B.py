@@ -11,6 +11,11 @@ import csv
 from keras.datasets import mnist
 from random import shuffle
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data_mnist
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]

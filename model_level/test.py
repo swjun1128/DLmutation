@@ -5,7 +5,10 @@ Created on Fri Dec 14 16:42:34 2018
 
 @author: qq
 """
+import sys
+sys.path.append('../')
 import keras
+from keras.models import Model,Input,load_model
 from keras.models import load_model
 from keras.models import model_from_json
 import h5py  #导入工具包  
@@ -13,6 +16,9 @@ import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
 from sklearn.metrics import accuracy_score
 from keras.datasets import mnist
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data
+#mnist = input_data.read_data_sets("../MNIST_data/", one_hot=True)
 '''
 #HDF5的写入：  
 imgData = np.zeros((30,3,128,256))  
@@ -42,36 +48,10 @@ y_test = keras.utils.to_categorical(y_test, 10)
 #print f['/model_weights/conv2d_2']['conv2d_2']['kernel:0'][2][2]
 
    
-print('swj')
 model_path='ModelB_raw.hdf5'
 model=load_model(model_path)
-json_string=model.to_json()
-#relu换成linear即可   
-#replace('relu', 'linear', 1)
-#find('relu')
 
-score = model.evaluate(x_test, y_test)
-print('Origin Test accuracy: %.4f'% score[1])
-
-
-'''
-10000/10000 [==============================] - 3s 295us/step
-Mutated Test accuracy: 0.9712
-3
-1188
-10000/10000 [==============================] - 3s 295us/step
-Mutated Test accuracy: 0.9651
-3
-2036
-10000/10000 [==============================] - 3s 291us/step
-Mutated Test accuracy: 0.8997
-3
-2503
-10000/10000 [==============================] - 3s 293us/step
-Mutated Test accuracy: 0.9243
-'''
-#model.save_weights('my_model_weight.h5')
-#data=h5py.File('my_model_weight.h5','r+')
-    #print(f['model_weights'][key].shape) 
-
+#参数2是阈值，第一和第二大输出的比
+bound_data_lst = get_bound_data_mnist(model,2)
+print accuracy_in_bound_data(model,bound_data_lst)
     #print(f['model_weights'][key].value)

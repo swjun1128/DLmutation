@@ -11,6 +11,11 @@ import csv
 from keras.datasets import mnist
 from random import shuffle
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data_mnist
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]
@@ -79,17 +84,19 @@ if __name__=='__main__':
     model=load_model(model_path)
     score = accuracy_mnist(model)
     print('Origin Test accuracy: %.4f'% score)
-    acc =[]
+    acclst =[]
     for i in range(25):
         model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change))
-    print 'dense1:',acc
-    acc =[]
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
+    acclst =[]
     for i in range(25):
         model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change))
-    print 'dense2:',acc
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]

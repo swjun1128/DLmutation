@@ -12,6 +12,11 @@ import csv
 from keras.datasets import mnist
 from random import shuffle
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data_mnist
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]
@@ -71,35 +76,28 @@ def accuracy_mnist(model,mnist):
     y_test = keras.utils.to_categorical(y_test, 10)
     score = model.evaluate(x_test, y_test)
     return score[1]
-'''
-def accuracy_cifar(model):
-    #model: CNN_model
-    #return : acc of cifar
-    (_, _), (X_test, Y_test) = cifar10.load_data()
-    X_test=X_test.astype('float32')
-    X_test/=255
-    pred=model.predict(X_test)
-    pred=list(map(lambda x:np.argmax(x),pred))
-    test_label=list(map(lambda x:np.argmax(x),pd.get_dummies(Y_test.reshape(-1)).values))
-    return accuracy_score(test_label,pred)
-'''
+
 
 if __name__=='__main__':
     model_path='../ModelA_raw.hdf5'
     model=load_model(model_path)
     score = accuracy_mnist(model,mnist)
     print('Origin Test accuracy: %.4f'% score)
-    acc =[]
+    acclst =[]
+    bound_data_lst = get_bound_data_mnist(model,10)
+    #print len(bound_data_lst)
     for i in range(20):
         model_change = weight_shuffling(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change,mnist))
-    print 'dense1:',acc
-    acc =[]
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
+    acclst =[]
     for i in range(20):
         model_change = weight_shuffling(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_mnist(model_change,mnist))
-    print 'dense2:',acc
+        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]
