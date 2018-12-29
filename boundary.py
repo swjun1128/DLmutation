@@ -49,12 +49,8 @@ def find_second(act):
 
 #不仅要在边界，而且要pass
 def get_bound_data_mnist(model,bound_ratio=10):
-    (_,_ ), (x_test,_ ) = mnist.load_data()
-    x_test = x_test.astype('float32').reshape(-1,28,28,1)
-    x_test = x_test / 255
     bound_data_lst =[]
     out_index=len(model.layers)-1
-    model.layers[out_index]
     model_layer=Model(inputs=model.input,outputs=model.layers[out_index].output)
   
     act_layers=model_layer.predict_on_batch(x_test)
@@ -92,7 +88,6 @@ cifar_X_test/=255
 def get_bound_data_cifar(model,bound_ratio=10):
     bound_data_lst =[]
     out_index=len(model.layers)-1
-    model.layers[out_index]
     model_layer=Model(inputs=model.input,outputs=model.layers[out_index].output)
   
     act_layers=model_layer.predict_on_batch(cifar_X_test)
