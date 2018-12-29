@@ -11,6 +11,11 @@ import csv
 from keras.datasets import mnist
 from keras.utils import np_utils
 
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_cifar
+from boundary import accuracy_in_bound_data_cifar
+
 def HDF5_structure(data):
     root=data.keys()
     final_path=[]
@@ -42,7 +47,7 @@ def gaussian_fuzz(model,random_ratio=0.01):
         data_path=HDF5_structure(data)
         lst=[]
         for path in data_path:
-            print data[path].shape
+            #print data[path].shape
             if len(data[path].shape)==4:
                 a,b,c,d=data[path].shape
                 lst.extend([(path,a_index,b_index,c_index,d_index) for a_index in range(a) for b_index in range(b) for c_index in range(c) for d_index in range(d)])
@@ -109,10 +114,14 @@ if __name__=='__main__':
     model=load_model(model_path)
     score = accuracy_cifar(model)
     print('Origin Test accuracy: %.4f'% score)
-    acc =[]
-    for i in range(1):
+      
+    bound_data_lst = get_bound_data_cifar(model,10)
+    acclst =[]
+    for i in range(30):
+        print i
         model_change = gaussian_fuzz(model,random_ratio=0.01)
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc.append(accuracy_cifar(model_change))
-    print acc
+        acc= accuracy_in_bound_data_cifar(model_change,bound_data_lst)
+        acclst.append(acc)
+    print 'Mutated accuracy in bound data:',[round(i,4) for i in acclst]

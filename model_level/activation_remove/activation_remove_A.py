@@ -13,6 +13,12 @@ import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
 from sklearn.metrics import accuracy_score
 from keras.datasets import mnist
+
+import sys
+sys.path.append('../../')
+from boundary import get_bound_data_mnist
+from boundary import accuracy_in_bound_data_mnist
+
 '''
 #HDF5的写入：  
 imgData = np.zeros((30,3,128,256))  
@@ -49,7 +55,7 @@ json_string=model.to_json()
 
 score = model.evaluate(x_test, y_test)
 print('Origin Test accuracy: %.4f'% score[1])
-
+bound_data_lst = get_bound_data_mnist(model,10)
 for i in range(json_string.count('relu')):
     #轮流换relu，换成linear其实就是删除的效果，线性等于无激活函数
     json_string_temp = json_string.replace('relu', 'linear', i+1)
@@ -60,8 +66,8 @@ for i in range(json_string.count('relu')):
     model_change.set_weights(model.get_weights())
     #重新编译
     model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-    score = model_change.evaluate(x_test, y_test)
-    print('Mutated Test accuracy: %.4f'% score[1])
+    acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+    print('Mutated accuracy in bound data: %.4f'% acc)
 
 '''
 Origin Test accuracy: 0.9738
