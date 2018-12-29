@@ -34,7 +34,7 @@ model.add(Dense(10, activation='softmax'))
 model.summary()
 
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=128, epochs=20, verbose=1)
+model.fit(x_train, y_train, batch_size=128, epochs=20, verbose=1,shuffle=False)
 score = model.evaluate(x_test, y_test)
 print('Test Loss: %.4f' % score[0])
 print('Test accuracy: %.4f'% score[1])

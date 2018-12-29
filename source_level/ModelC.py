@@ -45,12 +45,12 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(256, activation='relu'))
-model.add(Dense(10, activation='linear'))
+model.add(Dense(10, activation='softmax'))
 model.summary()
 
 
 model.compile(loss='categorical_crossentropy', optimizer=keras.optimizers.adam(), metrics=['accuracy'])
-model.fit(X_train, Y_train, batch_size=128, epochs=20,verbose=1) #先不要 shuffle=True
+model.fit(X_train, Y_train, batch_size=128, epochs=20,verbose=1,shuffle=False) #先不要 shuffle=False
 #Y_pred = model.predict_proba(X_test, verbose=0)
 score = model.evaluate(X_test, Y_test, verbose=0)
 print('测试集 score(val_loss): %.4f' % score[0])
