@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb0bf81e-d2b4-44bc-8a3b-4f3d8171c228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source_level/Data shuffle/ModelA_shuffle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source_level/Data shuffle/ModelB_shuffle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source_level/Data shuffle/ModelC_shuffle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Data Missing/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Data Missing/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Label Error/label_error_A.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Label Error/label_error_A.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Label Error/label_error_B.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Label Error/label_error_B.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Label Error/label_error_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Label Error/label_error_C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/ModelA_DR0.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/ModelA_DR1.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/ModelA_DR2.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/ModelA_DR3.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/ModelA_DR4.hdf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/Mutation_ReA.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/data_repetition/Mutation_ReA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/Mutation_Re_B.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/data_repetition/Mutation_Re_B.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/data_repetition/Mutation_Re_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/data_repetition/Mutation_Re_C.py" afterDir="false" />
-    </list>
+    <list default="true" id="fb0bf81e-d2b4-44bc-8a3b-4f3d8171c228" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
