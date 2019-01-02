@@ -20,12 +20,12 @@ from keras.models import Sequential
 # 分离出训练集和测试集
 (x_train, y_train), (x_test, y_test) = mnist.load_data()  # y_train 的shape：(60000,)
 #定义随即复制变量
-x_train_re = np.zeros((6000,28,28))
-y_train_re = np.zeros((6000,))
+x_train_re = np.zeros((600,28,28))
+y_train_re = np.zeros((600,))
 #制定随机种子（就是上面的seedslist中的值），便于复现
-random.seed(432)    #
+random.seed(55)    #
 ranIndexList = []
-for i in range(6000):
+for i in range(600):
     temp = random.randint(0,59999)
     ranIndexList.append(temp)
     x_train_re[i] = x_train[temp]
@@ -58,10 +58,9 @@ model.add(Dense(200, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 model.summary()
 
-
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=128, epochs=20, verbose=1) #shuffle=True,
+model.fit(x_train, y_train, batch_size=128, epochs=20, verbose=1,shuffle=False)
 score = model.evaluate(x_test, y_test)
 print('Test Loss: %.4f' % score[0])
 print('Test accuracy: %.4f'% score[1])
-model.save('ModelB_Seed432.hdf5')
+model.save('ModelB_DR9.hdf5')

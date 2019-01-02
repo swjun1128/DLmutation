@@ -21,13 +21,13 @@ from keras.utils import np_utils
 # (50000, 1)
 
 #定义随即复制变量
-x_train_re = np.zeros((5000,32,32,3))
-y_train_re = np.zeros((5000,1))
+x_train_re = np.zeros((500,32,32,3))
+y_train_re = np.zeros((500,1))
 # [432, 919, 57, 757, 215, 738, 430, 357, 326, 55]
 #制定随机种子（就是上面的seedslist中的值），便于复现
 random.seed(55)    #
 ranIndexList = []
-for i in range(5000):
+for i in range(500):
     temp = random.randint(0,49999)
     ranIndexList.append(temp)
     x_train_re[i] = x_train[temp]
@@ -70,9 +70,9 @@ model.summary()
 
 
 model.compile(loss='categorical_crossentropy', optimizer=keras.optimizers.adam(), metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=128, epochs=15,verbose=1) #先不要 shuffle=True
+model.fit(x_train, y_train, batch_size=128, epochs=20,verbose=1,shuffle=False) #先不要 shuffle=False
 #Y_pred = model.predict_proba(X_test, verbose=0)
 score = model.evaluate(x_test, y_test, verbose=0)
 print('测试集 score(val_loss): %.4f' % score[0])
 print('测试集 accuracy: %.4f' % score[1])
-model.save('ModelC_seed55.hdf5')
+model.save('ModelC_DR9.hdf5')

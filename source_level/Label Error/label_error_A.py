@@ -15,25 +15,23 @@ from keras.models import Sequential
 
 
 labeledIndex = []
-random.seed(864)
-for i in range(6000):
+random.seed(6)
+for i in range(600):
     labeledIndex.append(random.randint(0,59999))
 print(labeledIndex)
-random.seed(10)
+random.seed(45)
 labeledValue = []
-for i in range(6000):
+for i in range(600):
     labeledValue.append(random.randint(0,9))
 print(labeledValue)
 
 
-for i in range(6000):
+for i in range(600):
+    print( y_train[labeledIndex[i]])
     while y_train[labeledIndex[i]] == labeledValue[i]:
         labeledValue[i] = random.randint(0,9)
     y_train[labeledIndex[i]] = labeledValue[i]
-
-
-
-
+    print( y_train[labeledIndex[i]])
 
 # 输入数据为 mnist 数据集
 x_train = x_train.astype('float32').reshape(-1,28,28,1)
@@ -58,11 +56,11 @@ model.summary()
 
 
 model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1)  #shuffle=True,
+model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1,shuffle=False)  #shuffle=True,
 score = model.evaluate(x_test, y_test)
 print('Test Loss: %.4f' % score[0])
 print('Test accuracy: %.4f'% score[1])
-model.save('LeNet_label5.hdf5')
+model.save('ModelA_LE9.hdf5')
 
 
 
