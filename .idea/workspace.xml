@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb0bf81e-d2b4-44bc-8a3b-4f3d8171c228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source_level/Noise Perturbation/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Evalution.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Noise Perturbation/modelA_NP.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Noise Perturbation/modelA_NP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Noise Perturbation/modelB_NP.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Noise Perturbation/modelB_NP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source_level/Noise Perturbation/modelC_NP.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Noise Perturbation/modelC_NP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source_level/Evalution.py" beforeDir="false" afterPath="$PROJECT_DIR$/source_level/Evalution.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DLmutation$ModelA_shuffle.coverage" NAME="ModelA_shuffle Coverage Results" MODIFIED="1546347953681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/Data shuffle" />
+    <SUITE FILE_PATH="coverage/DLmutation$activation_remove_C.coverage" NAME="activation_remove_C Coverage Results" MODIFIED="1547169666461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model_level/activation_remove" />
     <SUITE FILE_PATH="coverage/DLmutation$ModelA.coverage" NAME="ModelA Coverage Results" MODIFIED="1546332363794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level" />
     <SUITE FILE_PATH="coverage/DLmutation$label_error_B.coverage" NAME="label_error_B Coverage Results" MODIFIED="1546334237045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/Label Error" />
     <SUITE FILE_PATH="coverage/DLmutation$Mutation_Re_C.coverage" NAME="Mutation_Re_C Coverage Results" MODIFIED="1546327003277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/data_repetition" />
@@ -39,7 +35,7 @@
     <SUITE FILE_PATH="coverage/DLmutation$Mutation_Re_B.coverage" NAME="Mutation_Re_B Coverage Results" MODIFIED="1546076524316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/data_repetition" />
     <SUITE FILE_PATH="coverage/DLmutation$LR_ModelB.coverage" NAME="LR_ModelB Coverage Results" MODIFIED="1546530324271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/Layer Removal" />
     <SUITE FILE_PATH="coverage/DLmutation$evaluation.coverage" NAME="evaluation Coverage Results" MODIFIED="1545055290558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/data_repetition" />
-    <SUITE FILE_PATH="coverage/DLmutation$Evalution.coverage" NAME="Evalution Coverage Results" MODIFIED="1547140819071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level" />
+    <SUITE FILE_PATH="coverage/DLmutation$Evalution.coverage" NAME="Evalution Coverage Results" MODIFIED="1547198535537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level" />
     <SUITE FILE_PATH="coverage/DLmutation$Model_B.coverage" NAME="Model_B Coverage Results" MODIFIED="1546064125523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level" />
     <SUITE FILE_PATH="coverage/DLmutation$LR_modelC.coverage" NAME="LR_modelC Coverage Results" MODIFIED="1546564389570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/Layer Removal" />
     <SUITE FILE_PATH="coverage/DLmutation$modelA_NP.coverage" NAME="modelA_NP Coverage Results" MODIFIED="1547115833397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source_level/Noise Perturbation" />
@@ -55,9 +51,9 @@
     <session id="259464256">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -66,87 +62,53 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bound_data_1st" value="1" />
-          <entry key="bound_data_1st_modelA" value="3" />
-          <entry key="bound_data_1st_modelB" value="2" />
+          <entry key="bound_data_1st_modelA" value="4" />
+          <entry key="bound_data_1st_modelB" value="3" />
+          <entry key="bound_data_1st_modelC" value="2" />
           <entry key="hdf5" value="7" />
           <entry key="md" value="1" />
-          <entry key="py" value="198" />
-          <entry key="txt" value="159" />
+          <entry key="py" value="206" />
+          <entry key="txt" value="202" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="172" />
-          <entry key="Python" value="198" />
+          <entry key="PLAIN_TEXT" value="219" />
+          <entry key="Python" value="206" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="13922" />
+          <entry key="py" value="16027" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="13922" />
+          <entry key="Python" value="16027" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source_level/load_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source_level/Evalution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="87" column="41" lean-forward="true" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+            <state relative-caret-position="849">
+              <caret line="422" lean-forward="true" selection-start-line="422" selection-end-line="422" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <marker date="1547168664553" expanded="true" signature="1412:2341" ph="..." />
+                <marker date="1547198628949" expanded="true" signature="1426:2355" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/ModelC_AFR.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source_level/ModelC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1079">
-              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/boundary.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1475">
-              <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -164,6 +126,7 @@
     <findStrings>
       <find>Y_test</find>
       <find>k</find>
+      <find>input</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,6 +176,8 @@
         <option value="$PROJECT_DIR$/source_level/Noise Perturbation/test.py" />
         <option value="$PROJECT_DIR$/source_level/Noise Perturbation/modelC_NP.py" />
         <option value="$PROJECT_DIR$/source_level/load_model.py" />
+        <option value="$PROJECT_DIR$/boundary.py" />
+        <option value="$PROJECT_DIR$/model_level/activation_remove/activation_remove_C.py" />
         <option value="$PROJECT_DIR$/source_level/Evalution.py" />
       </list>
     </option>
@@ -241,6 +206,11 @@
             <path>
               <item name="DLmutation" type="b2602c69:ProjectViewProjectNode" />
               <item name="DLmutation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DLmutation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DLmutation" type="462c0819:PsiDirectoryNode" />
+              <item name="source_level" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,6 +266,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="activation_remove_C" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DLmutation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_level/activation_remove" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_level/activation_remove/activation_remove_C.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="load_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DLmutation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,28 +302,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source_level/load_model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="modelB_NP" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="DLmutation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source_level/Noise Perturbation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source_level/Noise Perturbation/modelB_NP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -386,18 +356,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.modelB_NP" />
       <item itemvalue="Python.modelC_NP" />
       <item itemvalue="Python.Evalution" />
       <item itemvalue="Python.load_model" />
+      <item itemvalue="Python.activation_remove_C" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Evalution" />
+        <item itemvalue="Python.activation_remove_C" />
         <item itemvalue="Python.load_model" />
         <item itemvalue="Python.modelC_NP" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.modelB_NP" />
       </list>
     </recent_temporary>
   </component>
@@ -425,15 +395,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18766756" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19436997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.3460993" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.36879432" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -458,167 +427,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelA/A0/npArray_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
-          <folding>
-            <element signature="e#47#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Evalution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9287">
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newcriteria.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3564">
-          <folding>
-            <element signature="e#47#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelB/ModelB_AFR.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/ModelA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelA/ModelA_LA_BN.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C4/npedArray_4.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C4/randomResult_4.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="1187" lean-forward="true" selection-start-line="1" selection-start-column="1180" selection-end-line="1" selection-end-column="1187" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C5/randomResult_5.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C3/initialArray_3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5508" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelB/ModelB_NP1.hdf5">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelB/B2/npedArray_2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelB/B2/initialArray_2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelB/B2/npArray_2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C0/randomResult_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C0/npArray_0.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C0/initialArray_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1944" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C0/npedArray_0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5616" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/C9/initialArray_9.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/ModelCResults.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelA/ModelA_LR_84.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelA/ModelA_LR_120.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelA/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelC/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelB/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelB/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelC/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelA/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelC/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelB/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelA/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelC/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelC/ModelC_randomIndex_Record.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelB/ModelB_randomIndex_Record.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelB/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelA/results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC_NP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <marker date="1547125147478" expanded="true" signature="479:484" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -626,67 +438,195 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="158" selection-start-line="158" selection-end-line="158" />
-          <folding>
-            <element signature="e#24#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st" />
     <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelA/ModelA_AFR.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelB/bound_results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/bound_results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelA/bound_results.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelB/bound_results.txt" />
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/bound_results.txt" />
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelA/bound_results.txt" />
     <entry file="file://$PROJECT_DIR$/source_level/load_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source_level/ModelC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1079">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="-755">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st_modelA">
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelA/results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelB/results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelC/results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="48" selection-start-column="42" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelA_LA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1439" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelC_LA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-251" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_level/activation_remove/activation_remove_C.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/ModelC_AFR.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/LR_ModelA.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelA/ModelA_LR_120.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelA/ModelA_LR_84.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/LR_ModelB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1007" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/LR_modelC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelB/ModelB_LR.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boundary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="e#105#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st_modelC">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st_modelB">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/ModelC_AFR.txt">
+    <entry file="file://$PROJECT_DIR$/source_level/bound_data_1st_modelA">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/boundary.py">
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Activition Function Removal/modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelA/boundedResults.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1475">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+        <state relative-caret-position="324">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data shuffle/mutated_models/modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Data Missing/Mutated_model/modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/data_repetition/mutated_model/mutated_modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Label Error/mutated models/mutated_modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Add/modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Layer Removal/ModelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelA/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelB/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_level/Noise Perturbation/modelC/boundedResults.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/source_level/Evalution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="87" column="41" lean-forward="true" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
+        <state relative-caret-position="849">
+          <caret line="422" lean-forward="true" selection-start-line="422" selection-end-line="422" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-            <marker date="1547168664553" expanded="true" signature="1412:2341" ph="..." />
+            <marker date="1547198628949" expanded="true" signature="1426:2355" ph="..." />
           </folding>
         </state>
       </provider>
