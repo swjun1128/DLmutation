@@ -1,0 +1,10 @@
+测试集 score(val_loss): 0.0537	测试集 accuracy: 0.9867
+测试集 score(val_loss): 0.0551	测试集 accuracy: 0.9860
+测试集 score(val_loss): 0.0547	测试集 accuracy: 0.9860
+测试集 score(val_loss): 0.0640	测试集 accuracy: 0.9841
+测试集 score(val_loss): 0.0628	测试集 accuracy: 0.9849
+测试集 score(val_loss): 0.0608	测试集 accuracy: 0.9852
+测试集 score(val_loss): 0.0504	测试集 accuracy: 0.9877
+测试集 score(val_loss): 0.0540	测试集 accuracy: 0.9859
+测试集 score(val_loss): 0.0632	测试集 accuracy: 0.9842
+测试集 score(val_loss): 0.0524	测试集 accuracy: 0.9869
