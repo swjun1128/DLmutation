@@ -14,7 +14,6 @@ from keras.datasets import mnist
 import sys
 sys.path.append('../../')
 from boundary import get_bound_data_mnist
-from boundary import accuracy_in_bound_data
 
 def HDF5_structure(data):
     root=data.keys()
@@ -128,10 +127,12 @@ if __name__=='__main__':
     model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
     
     bound_data_lst = get_bound_data_mnist(model,10)
-    acclst=[]
-    for i in range(20):
+    
+    for i in range(30):
+        print i
         model_change = gaussian_fuzz(model,random_ratio=0.01)
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
-        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data: ',[round(i,4) for i in acclst]
+        #acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        #acclst.append(acc)
+        model_change.save('mutated/MODEL_B/ModelB_Gfuzz'+str(i)+'.hdf5')
+    #print 'Mutated accuracy in bound data: ',[round(i,4) for i in acclst]

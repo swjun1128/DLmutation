@@ -88,9 +88,11 @@ if __name__=='__main__':
     acclst =[]
     index = np.random.choice(200,50)
     for i in range(50):
+        print i , index[i]
         model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index= index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
+        #acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        model_change.save('mutated/MODEL_B/ModelB_NB'+str(i)+'.hdf5')
+        #acclst.append(acc)
+    #print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]

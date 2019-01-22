@@ -117,7 +117,7 @@ if __name__=='__main__':
       
     bound_data_lst = get_bound_data_cifar(model,10)
     acclst =[]
-    for i in range(30):
+    for i in range(2):
         print i
         model_change = gaussian_fuzz(model,random_ratio=0.01)
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])

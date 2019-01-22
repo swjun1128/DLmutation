@@ -87,11 +87,12 @@ if __name__=='__main__':
     
     bound_data_lst = get_bound_data_mnist(model,10)
     acclst =[]
-    for i in range(1):
+    for i in range(60):
         print i
         model_change = neuron_switch(model,Layer = 'dense_1',neuron_change= np.random.choice(200,2))
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
         acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
         acclst.append(acc)
+        model_change.save('mutated/MODEL_B/ModelB_NSwitch'+str(i)+'.hdf5')
     print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]

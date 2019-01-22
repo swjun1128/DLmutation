@@ -68,6 +68,7 @@ for i in range(json_string.count('relu')):
     model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
     acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
     print('Mutated accuracy in bound data: %.4f'% acc)
+    model_change.save('mutated/MODEL_A/ModelA_NB'+str(i)+'.hdf5')
 
 '''
 Origin Test accuracy: 0.9738

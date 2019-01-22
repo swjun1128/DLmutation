@@ -86,18 +86,22 @@ if __name__=='__main__':
     acclst =[]
     bound_data_lst = get_bound_data_mnist(model,10)
     #print len(bound_data_lst)
-    for i in range(20):
-        model_change = weight_shuffling(model,Layer = 'dense_1',neuron_index=np.random.choice(120))
+    index = np.random.choice(120,30)
+    for i in range(30):
+        model_change = weight_shuffling(model,Layer = 'dense_1',neuron_index=index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
+        #acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        #acclst.append(acc)
+        model_change.save('mutated/MODEL_A/ModelA_WShuff'+str(i)+'.hdf5')
+    #print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
     acclst =[]
-    for i in range(20):
-        model_change = weight_shuffling(model,Layer = 'dense_2',neuron_index=np.random.choice(84))
+    index = np.random.choice(84,30)
+    for i in range(30):
+        model_change = weight_shuffling(model,Layer = 'dense_2',neuron_index=index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]
+        #acc= accuracy_in_bound_data_mnist(model_change,bound_data_lst)
+        #acclst.append(acc)
+        model_change.save('mutated/MODEL_A/ModelA_WShuff'+str(i+30)+'.hdf5')
+    #print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]

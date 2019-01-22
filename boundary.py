@@ -63,6 +63,22 @@ def get_bound_data_mnist(model,bound_ratio=10):
                 bound_data_lst.append(i)   
     return bound_data_lst
 
+#pass的非边界值
+def get_unbound_data_mnist(model,bound_ratio=10):
+    unbound_data_lst =[]
+    out_index=len(model.layers)-1
+    model_layer=Model(inputs=model.input,outputs=model.layers[out_index].output)
+  
+    act_layers=model_layer.predict_on_batch(x_test)
+    notpasslist=find_notpass(model)
+    for i in range(len(act_layers)):#此i只是choice_index序化后
+        act=act_layers[i]
+        index,ratio = find_second(act)
+        if ratio >= bound_ratio :
+            if i not in notpasslist:
+                unbound_data_lst.append(i)   
+    return unbound_data_lst
+
 
 #变异模型在边界值集合上的准确率
 def accuracy_in_bound_data_mnist(mutated_model,bound_data_lst):
@@ -77,6 +93,10 @@ def accuracy_in_bound_data_mnist(mutated_model,bound_data_lst):
             acc=acc+1
     acc = 1.0*acc/len(bound_data_lst)
     return acc
+
+#变异模型在非边界值集合上的准确率
+def accuracy_in_unbound_data_mnist(mutated_model,unbound_data_lst):
+    return accuracy_in_bound_data_mnist(mutated_model,unbound_data_lst)
 
 
 
@@ -100,6 +120,22 @@ def get_bound_data_cifar(model,bound_ratio=10):
                 bound_data_lst.append(i)   
     return bound_data_lst
 
+#pass的非边界值
+def get_unbound_data_cifar(model,bound_ratio=10):
+    bound_data_lst =[]
+    out_index=len(model.layers)-1
+    model_layer=Model(inputs=model.input,outputs=model.layers[out_index].output)
+  
+    act_layers=model_layer.predict_on_batch(cifar_X_test)
+    notpasslist=find_notpass(model,image=cifar_X_test,test_label=cifar_Y_test)
+    for i in range(len(act_layers)):#此i只是choice_index序化后
+        act=act_layers[i]
+        index,ratio = find_second(act)
+        if ratio>= bound_ratio :
+            if i not in notpasslist:
+                bound_data_lst.append(i)   
+    return unbound_data_lst
+
 
 #变异模型在边界值集合上的准确率
 def accuracy_in_bound_data_cifar(mutated_model,bound_data_lst):
@@ -114,3 +150,8 @@ def accuracy_in_bound_data_cifar(mutated_model,bound_data_lst):
             acc=acc+1
     acc = 1.0*acc/len(bound_data_lst)
     return acc
+
+
+#变异模型在非边界值集合上的准确率
+def accuracy_in_unbound_data_cifar(mutated_model,unbound_data_lst):
+    return accuracy_in_bound_data_cifar(mutated_model,unbound_data_lst)

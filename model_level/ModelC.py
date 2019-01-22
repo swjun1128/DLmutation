@@ -49,7 +49,7 @@ model.summary()
 
 #categorical_crossentropy
 model.compile(loss='mse', optimizer=keras.optimizers.adam(), metrics=['accuracy'])
-model.fit(X_train, Y_train, batch_size=500, epochs=20,verbose=1) #先不要 shuffle=True
+model.fit(X_train, Y_train, batch_size=128, epochs=50,verbose=1) #先不要 shuffle=True
 #Y_pred = model.predict_proba(X_test, verbose=0)
 score = model.evaluate(X_test, Y_test, verbose=0)
 print('测试集 score(val_loss): %.4f' % score[0])

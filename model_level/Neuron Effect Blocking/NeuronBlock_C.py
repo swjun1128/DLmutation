@@ -83,20 +83,25 @@ if __name__=='__main__':
     
     bound_data_lst = get_bound_data_cifar(model,10)
     acclst =[]
+    
+    index = np.random.choice(256,30)
     for i in range(30):
-        print i
-        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index=np.random.choice(256))
+        print i ,index[i]
+        model_change = neuron_effect_block(model,Layer = 'dense_1',neuron_index= index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc= accuracy_in_bound_data_cifar(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
-    acclst =[]
+        #acc= accuracy_in_bound_data_cifar(model_change,bound_data_lst)
+        #acclst.append(acc)
+        model.save('mutated/MODEL_C/ModelC_NB'+str(i)+'.hdf5')
+    #print 'Mutated accuracy in bound data(dense1):',[round(i,4) for i in acclst]
+    #acclst =[]
+    index = np.random.choice(256,30)
     for i in range(30):
-        print i
-        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index=np.random.choice(256))
+        print i , index[i]
+        model_change = neuron_effect_block(model,Layer = 'dense_2',neuron_index= index[i])
         model_change.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
         #print 'Mutated Test accuracy: ',accuracy_cifar(model_change)
-        acc= accuracy_in_bound_data_cifar(model_change,bound_data_lst)
-        acclst.append(acc)
-    print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]
+        #acc= accuracy_in_bound_data_cifar(model_change,bound_data_lst)
+        #acclst.append(acc)
+        model.save('mutated/MODEL_C/ModelC_NB'+str(i+30)+'.hdf5')
+    #print 'Mutated accuracy in bound data(dense2):',[round(i,4) for i in acclst]
